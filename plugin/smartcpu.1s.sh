@@ -12,22 +12,22 @@
 PROFILE="$(cat /Users/Shared/.smartcpu/profile)"
 case $PROFILE in
 0)
-    PROFILE_NAME="Extra Battery"
+    PROFILE_NAME="초절전"
     ;;
 1)
-    PROFILE_NAME="Battery"
+    PROFILE_NAME="배터리"
     ;;
 2)
-    PROFILE_NAME="Balance"
+    PROFILE_NAME="균형"
     ;;
 3)
-    PROFILE_NAME="Performance"
+    PROFILE_NAME="성능"
     ;;
 4)
-    PROFILE_NAME="Extra Performance"
+    PROFILE_NAME="고성능"
     ;;
 esac
-echo ":zap:"$PROFILE_NAME "| font=Arial"
+echo ""$PROFILE_NAME "모드| font=Arial"
 echo "---"
 
 # Print submenu

@@ -78,62 +78,48 @@ with open("/Users/Shared/.smartcpu/battery", "r") as input:
         battery = False
 
 # Print current config
-print("Power management info")
-print("POWER LONG \t", str(config[0]).rstrip(), "W | color=#ff0000")
-print("POWER SHORT \t", str(config[1]).rstrip(), "W | color=#ff0000")
+print("전원관리 설정")
+print("장기 전원 \t", str(config[0]).rstrip(), "W | color=#ff0000")
+print("단기 전원 \t", str(config[1]).rstrip(), "W | color=#ff0000")
 if int(config[2]) == 1:
-    print("TURBO BOOST \t ENABLED | color=#ffff00")
+    print("터보 부스트 \t 활성화 | color=#ffff00")
 else:
-    print("TURBO BOOST \t DISABLED | color=#ffff00")
+    print("터보 부스트 \t 비활성화 | color=#ffff00")
 print("---")
-print("Voltage offset info")
-print("CPU VOLTAGE \t", str(setting[5]["S"]).rstrip(), "mv | color=#ff0000")
-print("CPU CACHE   \t", str(setting[5]["T"]).rstrip(), "mv | color=#00ff00")
-print("GPU VOLTAGE \t", str(setting[5]["L"]).rstrip(), "mv | color=#0000ff")
+print("전압 오프셋 설정")
+print("CPU 전압 \t", str(setting[5]["S"]).rstrip(), "mv | color=#ff0000")
+print("CPU 캐쉬   \t", str(setting[5]["T"]).rstrip(), "mv | color=#00ff00")
+print("GPU 전압 \t", str(setting[5]["L"]).rstrip(), "mv | color=#0000ff")
 # Print select profile
 print("---")
-print("Select power profile")
+print("전원관리 옵션 선택")
 if battery:
     print(get_now_run(0),
-          "\tExtra Battery :warning: | bash=/bin/bash param1=/usr/local/bin/cprofile param2=0 terminal=false refresh=2")
+          "\t초절전 :warning: | bash=/bin/bash param1=/usr/local/bin/cprofile param2=0 terminal=false refresh=2")
     print("----")
-    print("--Config values: S" + setting[0]["S"] ,"L" + setting[0]["L"], "T" + setting[0]["T"], "| color=#FC74B3")
-    print("--Extra profile for battery, will hold processor| color=#6FC1FF size=12")
-    print("--run on lowest power for save more battery.| color=#6FC1FF size=12")
+    print("--설정값: S" + setting[0]["S"] ,"L" + setting[0]["L"], "T" + setting[0]["T"], "| color=#FC74B3")
     print(get_now_run(1),
-          "\tBattery :battery: | bash=/bin/bash param1=/usr/local/bin/cprofile param2=1 terminal=false refresh=2")
+          "\t배터리 :battery: | bash=/bin/bash param1=/usr/local/bin/cprofile param2=1 terminal=false refresh=2")
     print("----")
-    print("--Config values: S" + setting[1]["S"] ,"L" + setting[1]["L"], "T" + setting[1]["T"], "| color=#FC74B3")
-    print("--Default setting for battery mode.| color=#6FC1FF size=12")
+    print("--설정값: S" + setting[1]["S"] ,"L" + setting[1]["L"], "T" + setting[1]["T"], "| color=#FC74B3")
 else:
     print(get_now_run(2),
-          "\tBalance :snowflake: | bash=/bin/bash param1=/usr/local/bin/cprofile param2=2 terminal=false refresh=2")
-    print("--Config values: S" + setting[2]["S"] ,"L" + setting[2]["L"], "T" + setting[2]["T"], "| color=#FC74B3")
-    print("--Cool profile for cpu, this will keep processor| color=#6FC1FF size=12")
-    print("--don't suck too much power for less heat, better| color=#6FC1FF size=12")
-    print("--for watching movie and web developer.| color=#6FC1FF size=12")
+          "\t균형 :snowflake: | bash=/bin/bash param1=/usr/local/bin/cprofile param2=2 terminal=false refresh=2")
+    print("--설정값: S" + setting[2]["S"] ,"L" + setting[2]["L"], "T" + setting[2]["T"], "| color=#FC74B3")
     print(get_now_run(3),
-          "\tPerformance :muscle: | bash=/bin/bash param1=/usr/local/bin/cprofile param2=3 terminal=false refresh=2")
-    print("--Config values: S" + setting[3]["S"] ,"L" + setting[3]["L"], "T" + setting[3]["T"], "| color=#FC74B3")
-    print("--Performance profile for cpu, allow cpu run| color=#6FC1FF size=12")
-    print("--on higher power but don't let fan too noise,| color=#6FC1FF size=12")
-    print("--for game and mobile app developer.| color=#6FC1FF size=12")
+          "\t성능 :muscle: | bash=/bin/bash param1=/usr/local/bin/cprofile param2=3 terminal=false refresh=2")
+    print("--설정값: S" + setting[3]["S"] ,"L" + setting[3]["L"], "T" + setting[3]["T"], "| color=#FC74B3")
     print(get_now_run(4),
-          "\tExtra Performance :fire: | bash=/bin/bash param1=/usr/local/bin/cprofile param2=4 terminal=false refresh=2")
-    print("--Config values: S" + setting[4]["S"] ,"L" + setting[4]["L"], "T" + setting[4]["T"], "| color=#FC74B3")
-    print("--Maxout processor performance, release the beast,| color=#6FC1FF size=12")
-    print("--allow process suck more power for heavy job.| color=#6FC1FF size=12")
-    print("--Mining bitcon ? =)).| color=#6FC1FF size=12")
+          "\t고성능 :fire: | bash=/bin/bash param1=/usr/local/bin/cprofile param2=4 terminal=false refresh=2")
+    print("--설정값: S" + setting[4]["S"] ,"L" + setting[4]["L"], "T" + setting[4]["T"], "| color=#FC74B3")
 print("---")
-print("Extra config")
+print("추가설정")
 if (notification): 
-    print(get_status(notification),"\tToggle notification | bash=/bin/bash param1=/usr/local/bin/cprofile param2=-1 param3=0 terminal=false refresh=2")
+    print(get_status(notification),"\t알림 켜짐 | bash=/bin/bash param1=/usr/local/bin/cprofile param2=-1 param3=0 terminal=false refresh=2")
 else:
-    print(get_status(notification),"\tToggle notification | bash=/bin/bash param1=/usr/local/bin/cprofile param2=-1 param3=1 terminal=false refresh=2")
+    print(get_status(notification),"\t알림 꺼짐 | bash=/bin/bash param1=/usr/local/bin/cprofile param2=-1 param3=1 terminal=false refresh=2")
 
 if (auto_shut): 
-    print(get_status(auto_shut),"\tToggle auto shutdown | bash=/bin/bash param1=/usr/local/bin/cprofile param2=-1 param3=-1 param4=0 terminal=false refresh=2")
+    print(get_status(auto_shut),"\t자동 재시동 켜짐 | bash=/bin/bash param1=/usr/local/bin/cprofile param2=-1 param3=-1 param4=0 terminal=false refresh=2")
 else:
-    print(get_status(auto_shut),"\tToggle auto shutdown | bash=/bin/bash param1=/usr/local/bin/cprofile param2=-1 param3=-1 param4=1 terminal=false refresh=2")
-print("--Auto shutdown system when battery is below 5% percent,| color=#6FC1FF size=12")
-print("--you will have 1min before shutting down.| color=#6FC1FF size=12")
+    print(get_status(auto_shut),"\t자동 재시동 꺼짐 | bash=/bin/bash param1=/usr/local/bin/cprofile param2=-1 param3=-1 param4=1 terminal=false refresh=2")
