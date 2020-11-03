@@ -42,24 +42,22 @@
 ### DELL XPS15 9570 I7을 위한 `config.sh` 예시
 
 ```bash
-######### BEGIN OF YOUR CONFIG #########
-# All power value should be below your CPU TPD, you can not overclock cpu with this value
-
+######## BEGIN OF YOUR CONFIG #########
 # EXTRA BATTERY PROFILE 0               <EXTRA LOW BATTERY USAGE>
-EX_BATTERY_LONG="10"         # Long period power usage of cpu W
-EX_BATTERY_SHORT="15"        # Short period power usage of cpu W
+EX_BATTERY_LONG="15"         # Long period power usage of cpu W
+EX_BATTERY_SHORT="25"        # Short period power usage of cpu W
 EX_BATTERY_TURBO="0"        # Intel turbo on/off <Off>
 # BATTERY USAGE PROFILE 1               <LOW BATTARY USAGE AND COOL>
-BATTERY_LONG="20"            # Long period power usage of cpu W
-BATTERY_SHORT="25"          # Short period power usage of cpu W
+BATTERY_LONG="25"            # Long period power usage of cpu W
+BATTERY_SHORT="35"          # Short period power usage of cpu W
 BATTERY_TURBO="1"           # Intel turbo on/off <Off>
 # NORMAL USAGE PROFILE 2                <SMOOTHEST AND COOL>
-NORMAL_LONG="25"
-NORMAL_SHORT="30"
+NORMAL_LONG="30"
+NORMAL_SHORT="40"
 NORMAL_TURBO="1"
 # PERFORMANCE USAGE PROFILE 3           <PERFORMANCE COOL>
 PERFORMANCE_LONG="35"
-PERFORMANCE_SHORT="40"
+PERFORMANCE_SHORT="45"
 PERFORMANCE_TURBO="1"
 # EXTRA PERFORMANCE USAGE PROFILE 4     <PERFORMANCE MAX>
 EX_PERFORMANCE_LONG="45"
